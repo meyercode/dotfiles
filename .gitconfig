@@ -1,0 +1,11 @@
+[user]
+	email = adamme@kth.se
+	name = Adam M
+[alias]
+	co = checkout
+	st = status
+	pl = pull
+	mg = merge
+	f = fetch
+    pu = push
+    br = branch
