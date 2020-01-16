@@ -8,6 +8,10 @@ alias B='echo 🅱️ ommand not found'
 alias v='vim'
 alias ös='ls -Al'
 
+# Path navigation 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 cl() {
     cd "$1"
     ls
@@ -25,4 +29,5 @@ okular() {
 #     systemctl restart "$1"
 # }
 
-
+# alias vimwiki-conv='find ~/vimwiki/ -name "*.md" | while read i; do pandoc "$i" -o "${i%.*}.html" -c ~/vimwiki/bootstrap-3.4.1-dist/css/bootstrap.min.css; done'
+alias vimwiki-conv='find ~/vimwiki/ -name "*.md" | while read i; do pandoc "$i" -o "${i%.*}.html" -c ~/vimwiki/style/pandoc.css; done'

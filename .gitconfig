@@ -9,3 +9,5 @@
 	f = fetch
     pu = push
     br = branch
+    cm = commit
+    lg = log --oneline
