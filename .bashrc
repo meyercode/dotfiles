@@ -96,7 +96,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 export EDITOR=nvim
 
 # NeoVim
-alias vim='nvim'
+alias vim='/usr/bin/nvim.appimage'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

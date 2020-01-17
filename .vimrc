@@ -1,6 +1,7 @@
 set nocompatible              
 filetype plugin on
-syntax on
+
+syntax enable
 
 call plug#begin('~/.vim/plugged')
 
@@ -10,9 +11,13 @@ Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
-let g:vimwiki_list = [{'path': '~/vimwiki/','syntax': 'markdown', 'ext': '.md'}]
-command VimwikiConvertMarkdown :! find ~/vimwiki/ -name "*.md" | while read i; do pandoc "$i" -o "${i\%.*}.html" -c ~/vimwiki/style/pandoc.css; done
-map <Leader>ö :VimwikiConvertMarkdown<CR>
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.wiki'}]
+command VimwikiConvertMarkdown :! find ~/vimwiki/ -name "*.wiki" | while read i; do pandoc -f markdown -t html "$i" -o "${i\%.*}.html" -c ~/vimwiki/style/pandoc.css; done
+
+let mapleader="\<SPACE>"
+nnoremap <Leader>ö :VimwikiConvertMarkdown<CR>
+
+set clipboard=unnamed,unnamedplus
 
 " Line numbering
 set rnu nu
@@ -22,13 +27,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-set clipboard+=unnamed
-
+set termguicolors
 " colorscheme wal
 " Make it pretty
-" colorscheme nord
 colorscheme nord
 set cursorline
 hi CursorLine guibg=#373f52
-
-let mapleader=","
