@@ -9,6 +9,7 @@ Plug 'dracula/vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/goyo.vim'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
@@ -24,6 +25,9 @@ set clipboard=unnamed,unnamedplus
 
 " Goyo
 nnoremap <Leader>G :Goyo<CR>
+
+" NERDTree
+nnoremap <Leader>n :NERDTreeToggle<CR>
 
 " Line numbering
 set rnu nu
