@@ -1,13 +1,14 @@
 [user]
-	email = adamme@kth.se
-	name = Adam M
+  email = adam@meyerfam.com
+  name = MeyerCode
 [alias]
 	co = checkout
 	st = status
 	pl = pull
+  cl = clone
 	mg = merge
 	f = fetch
-    pu = push
-    br = branch
-    cm = commit
-    lg = log --oneline
+  pu = push
+  br = branch
+  cm = commit
+  lg = log --oneline
