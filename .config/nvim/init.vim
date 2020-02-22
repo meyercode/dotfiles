@@ -8,6 +8,7 @@ Plug 'arcticicestudio/nord-vim'
 " Plug 'vimwiki/vimwiki'
 Plug 'junegunn/goyo.vim'
 Plug 'preservim/nerdtree'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -17,6 +18,11 @@ call plug#end()
 colorscheme nord
 " Feeling adventurous? 
 " colorscheme dracula
+
+
+let mapleader="\<SPACE>"
+
+set updatetime=100
 
 
 " ////////////////
@@ -70,7 +76,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 " \\\\\\\\\\\\\\\\
-
 
 " Vim
 source ~/.vimrc
