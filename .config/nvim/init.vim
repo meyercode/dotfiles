@@ -55,10 +55,13 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 let g:NERDTreeWinSize=20
 " \\\\\\\\\\\\\\\\
 
+" ////////////////
+" vim-gitgutter
+nnoremap <Leader>g :GitGutterToggle<CR>
+" \\\\\\\\\\\\\\\\
 
 " ////////////////
 " coc.nvim
-
 " TextEdit might fail if hidden is not set.
 set hidden
 
