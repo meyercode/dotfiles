@@ -19,3 +19,5 @@ set termguicolors
 " Make it pretty
 set cursorline
 hi CursorLine guibg=#373f52
+
+set scrolloff=20
