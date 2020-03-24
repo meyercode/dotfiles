@@ -1,5 +1,6 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
+source ~/.vimrc
 
 call plug#begin('~/.vim/plugged')
 
@@ -11,6 +12,8 @@ Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -38,6 +41,10 @@ nnoremap <Leader>ö :VimwikiConvertMarkdown<CR>
 nnoremap <Leader>W :! git add . && git cm -m "Update" && git pu<CR>
 " \\\\\\\\
 
+" ////////
+" Easy source
+nnoremap <Leader>S :source ~/.config/nvim/init.vim<CR>
+" \\\\\\\\
 
 " ////////////////
 " Clipboard
@@ -47,6 +54,9 @@ set clipboard=unnamed,unnamedplus
 " ////////////////
 " Goyo
 nnoremap <Leader>G :Goyo<CR>
+" \\\\\\\\\\\\\\\\
+
+" ////////////////
 " \\\\\\\\\\\\\\\\
 
 " ////////////////
@@ -79,6 +89,3 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 " \\\\\\\\\\\\\\\\
-
-" Vim
-source ~/.vimrc
