@@ -5,6 +5,13 @@ syntax enable
 
 let mapleader="\<SPACE>"
 
+" Source updates easily
+nnoremap <Leader>s :so ~/.vimrc<CR>
+
+" End of line
+nnoremap ö $
+vnoremap ö $
+
 " Line numbering
 set rnu nu
 
