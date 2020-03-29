@@ -21,3 +21,8 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent;
 fi
+
+# Android Studio
+if [ -d "/opt/android-studio/bin" ]; then
+  PATH="$PATH:/opt/android-studio/bin" 
+fi
