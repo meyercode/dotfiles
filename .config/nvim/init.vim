@@ -18,9 +18,9 @@ Plug 'lervag/vimtex'
 call plug#end()
 
 
-colorscheme nord
+" colorscheme nord
 " Feeling adventurous? 
-" colorscheme dracula
+colorscheme dracula
 
 
 let mapleader="\<SPACE>"
