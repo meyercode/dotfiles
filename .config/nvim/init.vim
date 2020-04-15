@@ -52,8 +52,35 @@ set clipboard=unnamed,unnamedplus
 " \\\\\\\\\\\\\\\\
 
 " ////////////////
+" coc.nvim
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" \\\\\\\\\\\\\\\\
+
+" ////////////////
 " Goyo
 nnoremap <Leader>G :Goyo<CR>
+" \\\\\\\\\\\\\\\\
+
+" ////////////////
+" Coloresque
+let g:coloresque_whitelist = [ 'css', 'haml', 'html', 'htmldjango', 'javascript', 'jsx', 'less', 'php', 'postcss', 'pug', 'qml', 'sass', 'scss', 'sh', 'stylus', 'svg', 'typescript', 'vim', 'vue', 'xml' ]
+
+let g:coloresque_extra_filetypes = [ 'conf' ]
 " \\\\\\\\\\\\\\\\
 
 " ////////////////
@@ -75,24 +102,4 @@ let g:NERDTreeWinSize=20
 " ////////////////
 " vim-gitgutter
 nnoremap <Leader>g :GitGutterToggle<CR>
-" \\\\\\\\\\\\\\\\
-
-" ////////////////
-" coc.nvim
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 " \\\\\\\\\\\\\\\\
