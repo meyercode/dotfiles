@@ -10,6 +10,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -18,9 +20,9 @@ Plug 'lervag/vimtex'
 call plug#end()
 
 
-colorscheme nord
+"colorscheme nord
 " Feeling adventurous? 
-" colorscheme dracula
+colorscheme dracula
 
 
 let mapleader="\<SPACE>"
@@ -38,7 +40,7 @@ nnoremap <Leader>ö :VimwikiConvertMarkdown<CR>
 
 " ////////
 " My own wiki!
-nnoremap <Leader>W :! git add . && git cm -m "Update" && git pu<CR>
+nnoremap <Leader>wi :! git add . && git cm -m "Update" && git pu<CR>
 " \\\\\\\\
 
 " ////////
@@ -74,13 +76,6 @@ endfunction
 " ////////////////
 " Goyo
 nnoremap <Leader>G :Goyo<CR>
-" \\\\\\\\\\\\\\\\
-
-" ////////////////
-" Coloresque
-let g:coloresque_whitelist = [ 'css', 'haml', 'html', 'htmldjango', 'javascript', 'jsx', 'less', 'php', 'postcss', 'pug', 'qml', 'sass', 'scss', 'sh', 'stylus', 'svg', 'typescript', 'vim', 'vue', 'xml' ]
-
-let g:coloresque_extra_filetypes = [ 'conf' ]
 " \\\\\\\\\\\\\\\\
 
 " ////////////////
