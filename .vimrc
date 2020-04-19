@@ -20,11 +20,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" Colors (needed for nord-vim on Regolith)
-set termguicolors
-" colorscheme wal
-" Make it pretty
 set cursorline
-hi CursorLine guibg=#373f52
+hi CursorLine guibg=#454545
 
 set scrolloff=20

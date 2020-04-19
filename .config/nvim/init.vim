@@ -6,10 +6,18 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'dracula/vim'
 Plug 'arcticicestudio/nord-vim'
-" Plug 'vimwiki/vimwiki'
+Plug 'ayu-theme/ayu-vim' 
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'rakr/vim-one'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/goyo.vim'
 Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
+
+" Plug 'vimwiki/vimwiki'
+
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 
@@ -19,16 +27,32 @@ Plug 'lervag/vimtex'
 
 call plug#end()
 
+" Colors 
+set termguicolors
 
-"colorscheme nord
-" Feeling adventurous? 
-colorscheme dracula
+"let colorlist = ['mirage', 'light', 'dark']
+"let colortoggle = 0
+"let ayucolor = colorlist[colortoggle]
+"command! AyuToggle :let colortoggle = float2nr(fmod(colortoggle+1, 3)) | let ayucolor = colorlist[colortoggle] | colorscheme ayu
+"nnoremap <Leader>ct :AyuToggle<CR>
+
+" One
+colorscheme one
+
+command! BgToggle :let &background = ( &background == "dark" ? "light" : "dark" )
+nnoremap <Leader>bg :BgToggle<CR>
+let g:one_allow_italics = 1
+
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='one'
 
 
+" Random defaults
 let mapleader="\<SPACE>"
 
 set updatetime=100
-
 
 " ////////////////
 " vimwiki settings
