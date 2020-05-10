@@ -25,8 +25,3 @@ fi
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
-
-# Android Studio
-if [ -d "/opt/android-studio/bin" ]; then
-  PATH="$PATH:/opt/android-studio/bin" 
-fi
