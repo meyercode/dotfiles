@@ -1,3 +1,7 @@
+#
+# ~/.bash_profile
+#
+
 # SSH agent settings
 SSH_ENV="$HOME/.ssh/environment"
 
@@ -22,6 +26,8 @@ else
     start_agent;
 fi
 
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
-fi
+# Adding node.js to path
+PATH="$HOME/.node_modules/bin:$PATH"
+export npm_config_prefix=~/.node_modules
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
