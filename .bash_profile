@@ -27,7 +27,10 @@ else
 fi
 
 # Adding node.js to path
-PATH="$HOME/.node_modules/bin:$PATH"
-export npm_config_prefix=~/.node_modules
+#PATH="$HOME/.node_modules/bin:$PATH"
+#export npm_config_prefix=~/.node_modules
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+
+# Start X on login
+systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
