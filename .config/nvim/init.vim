@@ -108,8 +108,8 @@ let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
 let g:vimtex_quickfix_latexlog = {'default' : 0}
-set spelllang=en_us
-set spell
+"set spelllang=en_us
+"set spell
 
 " Quick-push report
 nnoremap <Leader>L :! git add ./report.tex && git commit -m "Adam update" && git push
