@@ -16,6 +16,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " Plug 'vimwiki/vimwiki'
 
 Plug 'MaxMEllon/vim-jsx-pretty'
@@ -23,7 +25,7 @@ Plug 'pangloss/vim-javascript'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -36,8 +38,10 @@ set termguicolors
 "command! AyuToggle :let colortoggle = float2nr(fmod(colortoggle+1, 3)) | let ayucolor = colorlist[colortoggle] | colorscheme ayu
 "nnoremap <Leader>ct :AyuToggle<CR>
 
-" One
-colorscheme one
+"colorscheme one
+"colorscheme challenger_deep
+
+colorscheme dracula
 
 command! BgToggle :let &background = ( &background == "dark" ? "light" : "dark" )
 nnoremap <Leader>bg :BgToggle<CR>
@@ -46,13 +50,14 @@ let g:one_allow_italics = 1
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='one'
+let g:airline_theme='dracula'
+"let g:airline_theme='challenger_deep'
 
 
 " Random defaults
 let mapleader="\<SPACE>"
 
-set updatetime=100
+set updatetime=50
 
 " ////////////////
 " vimwiki settings
@@ -104,15 +109,15 @@ nnoremap <Leader>G :Goyo<CR>
 
 " ////////////////
 " LaTeX
-let g:vimtex_view_general_viewer = 'okular'
-let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
-let g:vimtex_view_general_options_latexmk = '--unique'
-let g:vimtex_quickfix_latexlog = {'default' : 0}
+"let g:vimtex_view_general_viewer = 'okular'
+"let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+"let g:vimtex_view_general_options_latexmk = '--unique'
+"let g:vimtex_quickfix_latexlog = {'default' : 0}
 "set spelllang=en_us
 "set spell
 
 " Quick-push report
-nnoremap <Leader>L :! git add ./report.tex && git commit -m "Adam update" && git push
+"nnoremap <Leader>L :! git add ./report.tex && git commit -m "Adam update" && git push
 " \\\\\\\\\\\\\\\\
 
 " ////////////////
@@ -124,4 +129,10 @@ let g:NERDTreeWinSize=20
 " ////////////////
 " vim-gitgutter
 nnoremap <Leader>g :GitGutterToggle<CR>
+" \\\\\\\\\\\\\\\\
+"
+" ////////////////
+" FZF
+nnoremap <Leader>f :FZF<CR>
+nnoremap <Leader>F :Rg<CR>
 " \\\\\\\\\\\\\\\\
