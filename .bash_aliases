@@ -10,6 +10,7 @@ alias ssh='TERM=xterm-256color ssh'
 alias B='echo 🅱️ ommand not found'
 alias v='nvim'
 alias vi='nvim'
+alias vim='nvim'
 alias ös='ls -Al'
 
 # Path navigation 
