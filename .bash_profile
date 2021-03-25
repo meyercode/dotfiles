@@ -34,3 +34,4 @@ fi
 
 # Start X on login
 systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+

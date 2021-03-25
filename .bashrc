@@ -81,3 +81,4 @@ alias v='nvim'
 
 #Arch default
 #PS1='[\u@\h \W]\$ '
+

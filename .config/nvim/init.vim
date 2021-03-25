@@ -136,3 +136,4 @@ nnoremap <Leader>g :GitGutterToggle<CR>
 nnoremap <Leader>f :FZF<CR>
 nnoremap <Leader>F :Rg<CR>
 " \\\\\\\\\\\\\\\\
+
