@@ -33,5 +33,3 @@ alias wiki='cd ~/wiki && vim README.md'
 
 alias dwight="cat ~/.dwight | lolcat"
 
-alias rg='rg --hidden'
-
