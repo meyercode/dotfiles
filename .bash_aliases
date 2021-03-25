@@ -31,5 +31,7 @@ okular() {
 alias vimwiki-conv='find ~/vimwiki/ -name "*.wiki" | while read i; do pandoc -f markdown -t html "$i" -o "${i%.*}.html" -c ~/vimwiki/style/pandoc.css; done'
 alias wiki='cd ~/wiki && vim README.md'
 
-
 alias dwight="cat ~/.dwight | lolcat"
+
+alias rg='rg --hidden'
+
