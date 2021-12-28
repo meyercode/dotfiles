@@ -1,1 +1,23 @@
+export MANPATH="/usr/local/man:$MANPATH"
+
+export EDITOR=nvim
+export VISUAL=nvim
+
+## LANGUAGES
 source "$HOME/.cargo/env"
+
+## PLUGINS
+# FZF settings
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}" --height 80% --layout=reverse --border'
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND='fd'
+export BAT_THEME='Dracula'
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export VAULT_SKIP_VERIFY=true
+
