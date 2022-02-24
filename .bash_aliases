@@ -33,6 +33,8 @@ alias dwight="cat ~/.dwight | lolcat"
 
 alias java8="export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/"
 alias java11="export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home/"
+alias java13="export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-13.jdk/Contents/Home/"
+alias java17="export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home/"
 
 # Switch GH accounts and change SSH settings between work and personal profiles
 alias work="cp ~/.gitconfig.work ~/.gitconfig && cp ~/.ssh/config.work ~/.ssh/config"

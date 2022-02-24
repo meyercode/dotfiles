@@ -8,7 +8,7 @@
   cl = clone
 	mg = merge
 	f = fetch
-  pu = push
+  p = push
   br = branch
   cm = commit
   lg = log --oneline

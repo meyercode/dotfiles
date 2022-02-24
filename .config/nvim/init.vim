@@ -58,7 +58,7 @@ let g:one_allow_italics = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='dracula'
-"let g:airline_theme='challenger_deep'
+"let g:airline_theme='one'
 
 
 " Random defaults
@@ -127,6 +127,13 @@ nmap <leader>r <Plug>(coc-refactor)
 
 " Function signature helper
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+
+" TSX extra
+augroup ReactFiletypes
+  autocmd!
+  autocmd BufRead,BufNewFile *.jsx set filetype=javascriptreact
+  autocmd BufRead,BufNewFile *.tsx set filetype=typescriptreact
+augroup END
 " \\\\\\\\\\\\\\\\
 
 " ////////////////
@@ -165,7 +172,7 @@ nnoremap <Leader>F :Rg<CR>
 " \\\\\\\\\\\\\\\\
 
 " ////////////////
-" FZF
+" Treesitter
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
