@@ -5,11 +5,7 @@ source ~/.vimrc
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'arcticicestudio/nord-vim'
-Plug 'ayu-theme/ayu-vim' 
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-Plug 'rakr/vim-one'
+Plug 'morhetz/gruvbox'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -19,7 +15,6 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Plug 'vimwiki/vimwiki'
 
 Plug 'sheerun/vim-polyglot'
 
@@ -30,8 +25,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -44,11 +37,9 @@ set termguicolors
 "command! AyuToggle :let colortoggle = float2nr(fmod(colortoggle+1, 3)) | let ayucolor = colorlist[colortoggle] | colorscheme ayu
 "nnoremap <Leader>ct :AyuToggle<CR>
 
-"colorscheme one
-"colorscheme challenger_deep
-
-let g:dracula_colorterm = 0
-colorscheme dracula
+"let g:dracula_colorterm = 0
+"colorscheme dracula
+colorscheme gruvbox
 
 command! BgToggle :let &background = ( &background == "dark" ? "light" : "dark" )
 nnoremap <Leader>bg :BgToggle<CR>
@@ -57,8 +48,7 @@ let g:one_allow_italics = 1
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='dracula'
-"let g:airline_theme='one'
+let g:airline_theme='gruvbox'
 
 
 " Random defaults
@@ -175,7 +165,7 @@ nnoremap <Leader>F :Rg<CR>
 " Treesitter
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "all",
   highlight = {
     enable = true,              -- false will disable the whole extension
   },

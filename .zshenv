@@ -10,9 +10,9 @@ source "$HOME/.cargo/env"
 # FZF settings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}" --height 80% --layout=reverse --border'
-export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_CTRL_T_COMMAND='fd'
-export BAT_THEME='Dracula'
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow -g '!.git/'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export BAT_THEME="Dracula"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"

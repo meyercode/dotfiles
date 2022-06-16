@@ -13,3 +13,6 @@
   cm = commit
   lg = log --oneline
 
+[init]
+	defaultBranch = main
+
