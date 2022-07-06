@@ -2,13 +2,17 @@
   email = adam@meyerfam.com
   name = MeyerCode
 [alias]
-	co = checkout
-	st = status
-	pl = pull
+  co = checkout
+  st = status
+  pl = pull
   cl = clone
-	mg = merge
-	f = fetch
-  pu = push
+  mg = merge
+  f = fetch
+  p = push
   br = branch
   cm = commit
   lg = log --oneline
+
+[init]
+  defaultBranch = main
+
