@@ -1,7 +1,7 @@
 # Font configuration
 font:
   # Point size
-  size: 10.0
+  size: 14.0
   # Normal (roman) font face
   normal:
     # Font family
@@ -10,7 +10,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Hack Nerd Font Mono
+    family: Hack
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -49,6 +49,42 @@ font:
     style: Bold Italic
 
 #draw_bold_text_with_bright_colors: false
+
+key_bindings:
+  - { key: Key1,      mods: Alt,          chars: "©"                     }
+  - { key: Key2,      mods: Alt,          chars: "@"                     }
+  - { key: Key3,      mods: Alt,          chars: "£"                     }
+  - { key: Key4,      mods: Alt,          chars: "$"                     }
+  - { key: Key5,      mods: Alt,          chars: "∞"                     }
+  - { key: Key6,      mods: Alt,          chars: "\xA7"                  }
+  - { key: Key7,      mods: Alt,          chars: "|"                     }
+  - { key: Key8,      mods: Alt,          chars: "\x5B"                  }
+  - { key: Key9,      mods: Alt,          chars: "\x5D"                  }
+  - { key: Key0,      mods: Alt,          chars: "≈"                     }
+  - { key: Minus,     mods: Alt,          chars: "\xB1"                  }
+
+## sv_SE PC Layout ('{', '}', '\' and '|' characters):
+#  - { key: Key7,      mods: Alt,          chars: "\x7B"                  }
+#  - { key: Key0,      mods: Alt,          chars: "\x7D"                  }
+#  - { key: Minus,     mods: Alt,          chars: "\x5C"                  }
+#  - { key: Grave,     mods: Alt,          chars: "\x7C"                  }
+  
+  - { key: Key1,      mods: Alt|Shift,    chars: "\xA1"                  }
+  - { key: Key2,      mods: Alt|Shift,    chars: "”"                     }
+  - { key: Key3,      mods: Alt|Shift,    chars: "\xA5"                  }
+  - { key: Key4,      mods: Alt|Shift,    chars: "\x24"                  }
+  - { key: Key5,      mods: Alt|Shift,    chars: "‰"                     }
+  - { key: Key6,      mods: Alt|Shift,    chars: "\xB6"                  }
+  - { key: Key7,      mods: Alt|Shift,    chars: "\x5C"                  }
+  - { key: Key8,      mods: Alt|Shift,    chars: "{"                     }
+  - { key: Key9,      mods: Alt|Shift,    chars: "}"                     }
+  - { key: Key0,      mods: Alt|Shift,    chars: "≠"                     }
+  - { key: Minus,     mods: Alt|Shift,    chars: "\xBF"                  }
+
+# Replace the default bindings for these as the VirtualKeycodes don't match reality
+  - { key: Slash,     mods: Command,      action: DecreaseFontSize       }
+  - { key: Minus,     mods: Command,      action: IncreaseFontSize       }
+alt_send_esc: false
 
 schemes:
   one_dark: &dark
@@ -115,12 +151,15 @@ schemes:
     primary:
       background: '0x282a36'
       foreground: '0xf8f8f2'
+
     cursor:
       text: CellBackground
       cursor: CellForeground
+      
     vi_mode_cursor:
       text: CellBackground
       cursor: CellForeground
+
     search:
       matches:
         foreground: '0x44475a'
@@ -131,12 +170,15 @@ schemes:
       bar:
         background: '0x282a36'
         foreground: '0xf8f8f2'
+
     line_indicator:
       foreground: None
       background: None
+
     selection:
       text: CellForeground
       background: '0x44475a'
+
     normal:
       black:   '0x000000'
       red:     '0xff5555'
@@ -146,6 +188,7 @@ schemes:
       magenta: '0xff79c6'
       cyan:    '0x8be9fd'
       white:   '0xbfbfbf'
+
     bright:
       black:   '0x4d4d4d'
       red:     '0xff6e67'
@@ -155,6 +198,7 @@ schemes:
       magenta: '0xff92d0'
       cyan:    '0x9aedfe'
       white:   '0xe6e6e6'
+
     dim:
       black:   '0x14151b'
       red:     '0xff2222'
@@ -165,7 +209,70 @@ schemes:
       cyan:    '0x59dffc'
       white:   '0xe6e6d1'
 
+  gruvbox_dark: &gruvbox_dark
+  # Default colors
+    primary:
+      # hard contrast: background = '0x1d2021'
+      background: '0x282828'
+      # soft contrast: background = '0x32302f'
+      foreground: '0xebdbb2'
+
+    # Normal colors
+    normal:
+      black:   '0x282828'
+      red:     '0xcc241d'
+      green:   '0x98971a'
+      yellow:  '0xd79921'
+      blue:    '0x458588'
+      magenta: '0xb16286'
+      cyan:    '0x689d6a'
+      white:   '0xa89984'
+
+    # Bright colors
+    bright:
+      black:   '0x928374'
+      red:     '0xfb4934'
+      green:   '0xb8bb26'
+      yellow:  '0xfabd2f'
+      blue:    '0x83a598'
+      magenta: '0xd3869b'
+      cyan:    '0x8ec07c'
+      white:   '0xebdbb2'
+
+  gruvbox_light: &gruvbox_light
+    # Default colors
+    primary:
+      # hard contrast: background = '0xf9f5d7'
+      background: '0xfbf1c7'
+      # soft contrast: background = '0xf2e5bc'
+      foreground: '0x3c3836'
+
+    # Normal colors
+    normal:
+      black:   '0xfbf1c7'
+      red:     '0xcc241d'
+      green:   '0x98971a'
+      yellow:  '0xd79921'
+      blue:    '0x458588'
+      magenta: '0xb16286'
+      cyan:    '0x689d6a'
+      white:   '0x7c6f64'
+
+    # Bright colors
+    bright:
+      black:   '0x928374'
+      red:     '0x9d0006'
+      green:   '0x79740e'
+      yellow:  '0xb57614'
+      blue:    '0x076678'
+      magenta: '0x8f3f71'
+      cyan:    '0x427b58'
+      white:   '0x3c3836'
+
 # Colors (One Dark)
 #colors: *dark
 #colors: *light
-colors: *dracula
+#colors: *dracula
+#colors: *gruvbox_light
+colors: *gruvbox_dark
+
