@@ -1,7 +1,7 @@
 # Font configuration
 font:
   # Point size
-  size: 14.0
+  size: 6.0
   # Normal (roman) font face
   normal:
     # Font family
