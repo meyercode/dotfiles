@@ -1,14 +1,11 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
+
 source ~/.vimrc
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'dracula/vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'ayu-theme/ayu-vim' 
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-Plug 'rakr/vim-one'
+Plug 'morhetz/gruvbox'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -18,14 +15,16 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Plug 'vimwiki/vimwiki'
+
+Plug 'sheerun/vim-polyglot'
 
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Plug 'lervag/vimtex'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
@@ -38,10 +37,9 @@ set termguicolors
 "command! AyuToggle :let colortoggle = float2nr(fmod(colortoggle+1, 3)) | let ayucolor = colorlist[colortoggle] | colorscheme ayu
 "nnoremap <Leader>ct :AyuToggle<CR>
 
-"colorscheme one
-"colorscheme challenger_deep
-
-colorscheme dracula
+"let g:dracula_colorterm = 0
+"colorscheme dracula
+colorscheme gruvbox
 
 command! BgToggle :let &background = ( &background == "dark" ? "light" : "dark" )
 nnoremap <Leader>bg :BgToggle<CR>
@@ -50,8 +48,7 @@ let g:one_allow_italics = 1
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='dracula'
-"let g:airline_theme='challenger_deep'
+let g:airline_theme='gruvbox'
 
 
 " Random defaults
@@ -59,16 +56,8 @@ let mapleader="\<SPACE>"
 
 set updatetime=50
 
-" ////////////////
-" vimwiki settings
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.wiki'}]
-" command VimwikiConvertMarkdown :! find ~/vimwiki/ -name "*.wiki" | while read i; do pandoc -f markdown -t html "$i" -o "${i\%.*}.html" -c ~/vimwiki/style/pandoc.css; done
-
-nnoremap <Leader>ö :VimwikiConvertMarkdown<CR>
-" \\\\\\\\\\\\\\\\
-
 " ////////
-" My own wiki!
+" Wiki
 nnoremap <Leader>wi :! git add . && git cm -m "Update" && git pu<CR>
 " \\\\\\\\
 
@@ -100,6 +89,41 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" Use <C-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <C-space> coc#refresh()
+else
+  inoremap <silent><expr> <C-@> coc#refresh()
+endif
+
+" Auto-import
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" 'Go To' code navigation.
+nmap <leader>df <Plug>(coc-definition)
+nmap <leader>dc <Plug>(coc-declaration)
+nmap <leader>y <Plug>(coc-type-definition)
+nmap <leader>i <Plug>(coc-implementation)
+nmap <leader>rf <Plug>(coc-references)
+
+" Refactoring
+nmap <leader>r <Plug>(coc-refactor)
+
+" Function signature helper
+autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+
+" TSX extra
+augroup ReactFiletypes
+  autocmd!
+  autocmd BufRead,BufNewFile *.jsx set filetype=javascriptreact
+  autocmd BufRead,BufNewFile *.tsx set filetype=typescriptreact
+augroup END
 " \\\\\\\\\\\\\\\\
 
 " ////////////////
@@ -130,10 +154,22 @@ let g:NERDTreeWinSize=20
 " vim-gitgutter
 nnoremap <Leader>g :GitGutterToggle<CR>
 " \\\\\\\\\\\\\\\\
-"
+
 " ////////////////
 " FZF
 nnoremap <Leader>f :FZF<CR>
 nnoremap <Leader>F :Rg<CR>
+" \\\\\\\\\\\\\\\\
+
+" ////////////////
+" Treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all",
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF
 " \\\\\\\\\\\\\\\\
 
