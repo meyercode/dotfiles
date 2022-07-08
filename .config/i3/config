@@ -21,8 +21,6 @@ for_window [class=".*"] border pixel 1
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-exec --no-startup-id feh --bg-scale /usr/share/wallpapers/Bamboo\ at\ Night/contents/images/5120x2880.png
-
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -38,6 +36,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+exec_always --no-startup-id feh --bg-scale /usr/share/wallpapers/Bamboo\ at\ Night/contents/images/5120x2880.png
+
+exec_always --no-startup-id picom -b
+
 # Use DBus (kde audio)
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "increase_volume" && $refresh_i3status
@@ -50,6 +52,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+
+# start browser
+bindsym $mod+Shift+Return exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
