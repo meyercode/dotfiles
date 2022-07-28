@@ -1,6 +1,6 @@
 export MANPATH="/usr/local/man:$MANPATH"
 
-export TERM="alacritty"
+export TERMINAL="alacritty"
 
 if [[ -n $SSH_CONNECTION ]]; then  
   export EDITOR='vim'

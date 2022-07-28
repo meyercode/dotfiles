@@ -9,7 +9,7 @@ ZSH_THEME="simple"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # see 'man strftime' for details.
 HIST_STAMPS="yyyy-mm-dd"
@@ -24,4 +24,15 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+
+bindkey -v
+bindkey -M vicmd v edit-command-line
+
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
