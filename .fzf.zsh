@@ -1,2 +1,13 @@
-export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}" --height 80% --layout=reverse --border'
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == */home/adam/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/home/adam/.fzf/bin"
+fi
 
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/home/adam/.fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "/home/adam/.fzf/shell/key-bindings.zsh"
