@@ -1,16 +1,23 @@
-local M = {}
-
 vim.g.mapleader = " "
 
+local map = vim.keymap
+
 -- end of line
-vim.keymap.set({'n','v'}, 'ö', '$')
+map.set({'n','v'}, 'ö', '$')
 
-vim.keymap.set('n', '<Leader>bg', ':BgToggle<CR>')
-vim.keymap.set('n', '<Leader>ms', ':Scratch<CR>')
+map.set('n', '<Leader>bg', require('tools').toggleBackground)
+map.set('n', '<Leader>ms', require('tools').makeScratch)
 
-vim.keymap.set('n', '<Leader>S', ':source ~/.config/nvim/init.vim<CR>')
+map.set('n', '<Leader>S', ':source ~/.config/nvim/init.lua<CR>')
+map.set('n', '<Leader>so', ':so %<CR>')
 
-vim.keymap.set('n', '<Leader>gy', 'Goyo<CR>')
+map.set('n', '<Leader>gy', ':Goyo<CR>')
 
-return M
+----------------
+-- Telescope
+----------------
+map.set('n', '<Leader>ff', ':Telescope find_files<cr>')
+map.set('n', '<Leader>fg', ':Telescope live_grep<cr>')
+map.set('n', '<Leader>fb', ':Telescope buffers<cr>')
+map.set('n', '<Leader>fh', ':Telescope help_tags<cr>')
 

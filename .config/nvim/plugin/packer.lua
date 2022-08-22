@@ -26,10 +26,16 @@ vim.cmd [[
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    use 'junegunn/goyo.vim'
-
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     use {'morhetz/gruvbox', as = 'gruvbox'}
+
+    use 'junegunn/goyo.vim'
+
+    use { 
+        'nvim-telescope/telescope.nvim', 
+        tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 end)
 
