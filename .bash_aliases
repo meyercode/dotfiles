@@ -1,5 +1,5 @@
 # some more ls aliases
-alias ls='ls -h --color=auto --group-directories-first'
+alias ls='ls -h --color=auto'
 alias ll='ls -Al'
 alias la='ls -A'
 alias l='ls'
