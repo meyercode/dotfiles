@@ -1,9 +1,9 @@
-env:
-  WINIT_X11_SCALE_FACTOR: "1"
+alt_send_esc: false
+
 # Font configuration
 font:
   # Point size
-  size: 10.0
+  size: 12.0
   # Normal (roman) font face
   normal:
     # Font family
@@ -12,7 +12,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Hack
+    family: Hack Nerd Font
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -58,66 +58,6 @@ window:
    y: 10
 
 schemes:
-  one_dark: &dark
-    # Default colors
-    primary:
-      background: '#282c34'
-      foreground: '#abb2bf'
-
-    # Normal colors
-    normal:
-      # NOTE: Use '#131613' for the `black` color if you'd like to see
-      # black text on the background.
-      black:   '#282c34'
-      red:     '#e06c75'
-      green:   '#98c379'
-      yellow:  '#d19a66'
-      blue:    '#61afef'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#abb2bf'
-
-    # Bright colors
-    bright:
-      black:   '#5c6370'
-      red:     '#e06c75'
-      green:   '#98c379'
-      yellow:  '#d19a66'
-      blue:    '#61afef'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#ffffff'
-
-  one_light: &light
-    # Default colors
-    primary:
-      foreground: '#282c34'
-      background: '#ffffff'
-
-    # Normal colors
-    normal:
-      # NOTE: Use '#131613' for the `black` color if you'd like to see
-      # black text on the background.
-      black:   '#282c34'
-      red:     '#e06c75'
-      green:   '#98c379'
-      yellow:  '#d19a66'
-      blue:    '#61afef'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#abb2bf'
-
-    # Bright colors
-    bright:
-      black:   '#5c6370'
-      red:     '#e06c75'
-      green:   '#98c379'
-      yellow:  '#d19a66'
-      blue:    '#61afef'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#ffffff'
-
   dracula: &dracula
     primary:
       background: '0x282a36'
@@ -246,4 +186,7 @@ schemes:
 #colors: *dracula
 #colors: *gruvbox_light
 colors: *gruvbox_dark
+
+key_bindings:
+  - { key: Space, mods: Control, chars: "\x00" }
 
