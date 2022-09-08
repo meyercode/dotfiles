@@ -1,38 +1,17 @@
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+autoload -Uz compinit bashcompinit
+compinit
+bashcompinit
 
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="simple"
+source <(curl -sL https://git.io/zi-loader); zzinit
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+zi light zsh-users/zsh-completions
+zi light zsh-users/zsh-autosuggestions
+zi light z-shell/F-Sy-H
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
+zi light lukechilds/zsh-nvm
+zi light spaceship-prompt/spaceship-prompt
+zi light jeffreytse/zsh-vi-mode
 
-# see 'man strftime' for details.
-HIST_STAMPS="yyyy-mm-dd"
-
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
-
-bindkey -v
-bindkey -M vicmd v edit-command-line
-
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+# My aliases
+zi snippet ~/.bash_aliases
 
