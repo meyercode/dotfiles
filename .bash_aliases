@@ -34,9 +34,6 @@ cl() {
 
 alias dwight="cat ~/.dwight | lolcat"
 
-# Switch GH accounts and change SSH settings between work and personal profiles
-#alias work="cp ~/.gitconfig.work ~/.gitconfig && cp ~/.ssh/config.work ~/.ssh/config"
-#alias personal="cp ~/.gitconfig.personal ~/.gitconfig && cp ~/.ssh/config.personal ~/.ssh/config"
-
-alias tlist='tmux list-sessions'
-
+chjava() {
+    export JAVA_HOME=`/usr/libexec/java_home -v $1`
+}
