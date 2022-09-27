@@ -2,8 +2,6 @@ autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
 
-eval "$(fnm env --use-on-cd)"
-
 source <(curl -sL https://git.io/zi-loader); zzinit
 
 zi light zsh-users/zsh-completions
