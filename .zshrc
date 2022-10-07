@@ -1,16 +1,18 @@
+fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
 
-eval "$(fnm env --use-on-cd)"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
+# zi
 source <(curl -sL https://git.io/zi-loader); zzinit
 
 zi light zsh-users/zsh-completions
 zi light zsh-users/zsh-autosuggestions
 zi light z-shell/F-Sy-H
 
-zi light dominik-schwabe/zsh-fnm
 zi light spaceship-prompt/spaceship-prompt
 zi light jeffreytse/zsh-vi-mode
 
