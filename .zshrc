@@ -18,3 +18,8 @@ zi light jeffreytse/zsh-vi-mode
 
 # My aliases
 zi snippet ~/.bash_aliases
+
+# pnpm
+export PNPM_HOME="/Users/adam/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
