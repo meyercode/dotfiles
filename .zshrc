@@ -16,10 +16,7 @@ zi light z-shell/F-Sy-H
 zi light spaceship-prompt/spaceship-prompt
 zi light jeffreytse/zsh-vi-mode
 
+ZSH_ASDF_DIRENV_LIBONLY="true" zi light redxtech/zsh-asdf-direnv
+
 # My aliases
 zi snippet ~/.bash_aliases
-
-# pnpm
-export PNPM_HOME="/Users/adam/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
