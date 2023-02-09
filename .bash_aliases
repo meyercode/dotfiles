@@ -4,7 +4,7 @@ alias ll='ls -Al'
 alias la='ls -A'
 alias l='ls'
 
-alias cp="cp -i"                          # confirm before overwriting something
+alias cp='cp -i'                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 
@@ -18,6 +18,9 @@ alias vim='nvim'
 alias vimc='vim ~/.vimrc'
 alias nvimc='vim ~/.config/nvim/init.vim'
 alias ös='ls -Al'
+
+alias pn='pnpm'
+alias px='pnpm exec'
 
 # Path navigation 
 alias ..='cd ..'
