@@ -4,6 +4,7 @@
 [alias]
   co = checkout
   st = status
+  d = diff
   pl = pull
   cl = clone
   mg = merge

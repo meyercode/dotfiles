@@ -30,6 +30,9 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 
+alias brew='arch -x86_64 /usr/local/bin/brew'
+alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
+
 cl() {
     cd "$1"
     ls
@@ -40,3 +43,4 @@ alias dwight="cat ~/.dwight | lolcat"
 chjava() {
     export JAVA_HOME=`/usr/libexec/java_home -v $1`
 }
+alias java8='export JAVA_HOME=/usr/local/opt/openjdk@8/libexec/openjdk.jdk/Contents/Home'

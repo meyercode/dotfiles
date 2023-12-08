@@ -1,0 +1,18 @@
+let mapleader=" "
+
+set incsearch
+set nu rnu
+
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>d <Action>(Debug)
+map <leader>r <Action>(RenameElement)
+map <leader>gb <Action>(Annotate)
+
+map <leader>z <Action>(ToggleDistractionFreeMode)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>s <Action>(SelectInProjectView)
+map <leader>o <Action>(FileStructurePopup)
+
+imap kk <Esc>
+map ö $
+map U <C-R>
