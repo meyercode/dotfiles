@@ -13,6 +13,16 @@ map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>s <Action>(SelectInProjectView)
 map <leader>o <Action>(FileStructurePopup)
 
+map <leader>cs <Action>(copilot.requestCompletions)
+map <leader>co <Action>(copilot.openCopilot)
+imap ç <Action>(copilot.openCopilot)
+imap œ <Action>(copilot.openCopilot)
+imap ‘ <Action>(copilot.nextSuggestion)
+imap π <Action>(copilot.previousSuggestion)
+imap √ <Action>(copilot.acceptSuggestion)
+imap Œ <Action>(copilot.chat.show)
+map <leader>cc <Action>(copilot.chat.show)
+
 imap kk <Esc>
 map ö $
 map U <C-R>

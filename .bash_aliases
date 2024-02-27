@@ -44,3 +44,11 @@ chjava() {
     export JAVA_HOME=`/usr/libexec/java_home -v $1`
 }
 alias java8='export JAVA_HOME=/usr/local/opt/openjdk@8/libexec/openjdk.jdk/Contents/Home'
+
+portproc() {
+    sudo lsof -i -P | grep LISTEN | grep ":$1" | awk '{print $2}'
+}
+
+clearport() {
+    sudo lsof -i -P | grep LISTEN | grep :"$1" | awk '{print $2}' | xargs kill -9
+}
