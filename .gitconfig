@@ -1,6 +1,7 @@
 [user]
   email = adam@meyerfam.com
   name = meyercode
+
 [alias]
   co = checkout
   st = status
@@ -16,4 +17,3 @@
 
 [init]
   defaultBranch = main
-

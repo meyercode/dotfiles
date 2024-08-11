@@ -3,6 +3,8 @@ autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
 
+source <(kubectl completion zsh)
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -44,3 +46,5 @@ if [ -f '/Users/adam/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/adam/googl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/adam/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/adam/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(fzf --zsh)"

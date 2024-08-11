@@ -22,6 +22,8 @@ alias ös='ls -Al'
 alias pn='pnpm'
 alias px='pnpm exec'
 
+alias kc='kubectl'
+
 # Path navigation 
 alias ..='cd ..'
 alias ...='cd ../..'
