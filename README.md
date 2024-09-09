@@ -13,6 +13,7 @@ Some example deps for my config are:
 ```
 stow . -t ~/
 ```
+(use `--adopt` if files already exist)
 
 ## Mac
 
