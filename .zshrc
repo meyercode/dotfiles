@@ -47,9 +47,11 @@ alias ll='ls -Al'
 alias la='ls -A'
 alias l='ls'
 
+alias c='clear'
 alias cp='cp -i'                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
+alias tree='tree -I ".git"'				  # hide .git folder by default
 
 # ssh client
 #alias ssh='TERM=xterm-256color ssh'
@@ -62,8 +64,8 @@ alias ös='ls -Al'
 
 alias pn='pnpm'
 alias px='pnpm exec'
-
 alias kc='kubectl'
+alias py='python3'
 
 # Path navigation 
 alias ..='cd ..'
@@ -73,26 +75,22 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 
+# OSX
 alias brew='arch -arm64e /opt/homebrew/bin/brew'
 alias xbrew='arch -x86_64 /usr/local/bin/brew'
 
-cl() {
-    cd "$1"
-    ls
-}
-
 alias dwight="cat ~/.dwight | lolcat"
 
-chjava() {
+chjava() { # Only tested on OSX
     export JAVA_HOME=`/usr/libexec/java_home -v $1`
 }
 alias java8='export JAVA_HOME=/usr/local/opt/openjdk@8/libexec/openjdk.jdk/Contents/Home'
 
-portproc() {
+portgrep() {
     sudo lsof -i -P | grep LISTEN | grep ":$1" | awk '{print $2}'
 }
 
-clearport() {
+killport() {
     sudo lsof -i -P | grep LISTEN | grep :"$1" | awk '{print $2}' | xargs kill -9
 }
 
