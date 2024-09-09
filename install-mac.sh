@@ -11,7 +11,7 @@ cp ./alacritty/dist/* ~/.config/alacritty
 rm -r ./alacritty
 
 # Tools
-brew install neovim rg fd fzf
+brew install neovim rg fd fzf tree
 # Tmux Plugin Manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
